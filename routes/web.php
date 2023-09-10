@@ -20,9 +20,13 @@ Route::get('/', function () {
 
 //การสร้าง Route
 Route::get('/about', function () {
-    echo "ยินเีต้อนรับ";
+    return view('about');
 });
 
-Route::get('/users' , function(){
-    echo "Hello Ronnayod";
+Route::get('/member', function () {
+    return view('member.index');
+});
+
+Route::get('/admin', function () {
+    return view('admin.index');
 });
