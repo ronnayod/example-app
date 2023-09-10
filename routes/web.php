@@ -18,13 +18,13 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 
 //การสร้าง Route
 
-Route::get('/about',[AboutController::class,'showData']);
+Route::get('/about',[AboutController::class,'index'])->name('about');
 
-Route::get('/member',[MemberController::class,'index']);
+Route::get('/member',[MemberController::class,'index'])->name('mem');
 
-Route::get('/admin', [AdminController::class,'index']);
+Route::get('/admin', [AdminController::class,'index'])->name('admin')->middleware('check');
