@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,14 +22,9 @@ Route::get('/', function () {
 
 
 //การสร้าง Route
-Route::get('/about', function () {
-    return view('about');
-});
 
-Route::get('/member', function () {
-    return view('member.index');
-});
+Route::get('/about',[AboutController::class,'showData']);
 
-Route::get('/admin', function () {
-    return view('admin.index');
-});
+Route::get('/member',[MemberController::class,'index']);
+
+Route::get('/admin', [AdminController::class,'index']);
